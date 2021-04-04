@@ -60,7 +60,7 @@ class Dice : Fragment() {
 
         val firstName = arguments?.getString("fName")
         val secondName = arguments?.getString("sName")
-        val firstWins = arguments?.getInt("sWins")
+        val firstWins = arguments?.getInt("fWins")
         val secondWins = arguments?.getInt("sWins")
 
         if(firstName != null){

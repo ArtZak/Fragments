@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.Navigation
 import com.example.fragments.databinding.FragmentMainBinding
 import java.nio.BufferUnderflowException
 
@@ -88,10 +89,12 @@ class Main : Fragment() {
             val fragment = TicTacToe()
             fragment.arguments = bundle
 
-            activity?.supportFragmentManager
+            Navigation.findNavController(binding.root).navigate(R.id.action_main_to_ticTacToe, bundle)
+
+           /* activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.main_container, fragment)
-                ?.commit()
+                ?.commit()*/
         }
 
         diceBtn.setOnClickListener{
@@ -104,17 +107,21 @@ class Main : Fragment() {
             val fragment = Dice()
             fragment.arguments = bundle
 
-            activity?.supportFragmentManager
+            Navigation.findNavController(binding.root).navigate(R.id.action_main_to_dice, bundle)
+
+            /*activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.main_container, fragment)
-                ?.commit()
+                ?.commit()*/
         }
 
         editBtn.setOnClickListener{
-            activity?.supportFragmentManager
+            Navigation.findNavController(binding.root).navigate(R.id.action_main_to_names)
+
+            /*activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.main_container, Names())
-                ?.commit()
+                ?.commit()*/
         }
 
         return binding.root

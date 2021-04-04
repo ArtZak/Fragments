@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(rootView)
 
-        supportFragmentManager
+        /*supportFragmentManager
             .beginTransaction()
             .add(R.id.main_container, main)
-            .commit()
+            .commit()*/
     }
 
     fun fieldHandler(view: View){

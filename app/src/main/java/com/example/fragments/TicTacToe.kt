@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.Navigation
 import com.example.fragments.databinding.FragmentTicTacToeBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -105,10 +106,12 @@ class TicTacToe : Fragment() {
             var fragment = Main()
             fragment.arguments = bundle
 
-            activity?.supportFragmentManager
+            Navigation.findNavController(binding.root).navigate(R.id.action_ticTacToe_to_main, bundle)
+
+            /*activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.main_container, fragment)
-                ?.commit()
+                ?.commit()*/
         }
 
         return binding.root

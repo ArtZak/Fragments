@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.text.set
+import androidx.navigation.Navigation
 import com.example.fragments.databinding.FragmentNamesBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -59,10 +60,12 @@ class Names : Fragment() {
             val main = Main()
             main.arguments = bundle
 
-            activity?.supportFragmentManager
+            Navigation.findNavController(binding.root).navigate(R.id.action_names_to_main, bundle)
+
+            /*activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.main_container, main)
-                ?.commit()
+                ?.commit()*/
         }
 
         return binding.root

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/main">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.example.fragments.Main"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main_to_names"
+            app:destination="@id/names" />
+        <action
+            android:id="@+id/action_main_to_ticTacToe"
+            app:destination="@id/ticTacToe" />
+        <action
+            android:id="@+id/action_main_to_dice"
+            app:destination="@id/dice" />
+    </fragment>
+    <fragment
+        android:id="@+id/dice"
+        android:name="com.example.fragments.Dice"
+        android:label="fragment_dice"
+        tools:layout="@layout/fragment_dice" >
+        <action
+            android:id="@+id/action_dice_to_main"
+            app:destination="@id/main" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticTacToe"
+        android:name="com.example.fragments.TicTacToe"
+        android:label="fragment_tic_tac_toe"
+        tools:layout="@layout/fragment_tic_tac_toe" >
+        <action
+            android:id="@+id/action_ticTacToe_to_main"
+            app:destination="@id/main" />
+    </fragment>
+    <fragment
+        android:id="@+id/names"
+        android:name="com.example.fragments.Names"
+        android:label="fragment_names"
+        tools:layout="@layout/fragment_names" >
+        <action
+            android:id="@+id/action_names_to_main"
+            app:destination="@id/main" />
+    </fragment>
+</navigation>
